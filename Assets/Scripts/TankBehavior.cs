@@ -6,7 +6,7 @@ public class TankBehavior : MonoBehaviour
 {
 
     public GameObject bullet;
-    public float speed = 100f;
+    private float speed = 160f;
     public Transform shootPosition;
 
     // Start is called before the first frame update
@@ -25,7 +25,7 @@ public class TankBehavior : MonoBehaviour
                                                            shootPosition.position,
                                                            shootPosition.rotation);
 
-            instantiatedPollo.GetComponent<Rigidbody>().AddForce(Vector3.forward * speed);
+            instantiatedPollo.GetComponent<Rigidbody>().AddForce(Vector3.forward * speed, ForceMode.Impulse);
 
         }
     }
