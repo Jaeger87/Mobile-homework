@@ -121,7 +121,7 @@ Transform:
   m_GameObject: {fileID: 6662772697905573539}
   m_LocalRotation: {x: -0.029407779, y: -0.8168289, z: 0.0056080483, w: 0.5761028}
   m_LocalPosition: {x: -0.6326877, y: 1.0978281, z: -4.2021255}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_Children:
   - {fileID: 6867154807554590017}
   m_Father: {fileID: 0}
@@ -155,3 +155,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce05023436cea4d41b456a7d7923061e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  polletto: {fileID: 5140175506014420690, guid: f19d4d97bba97754eb5bf1147d2742b5,
+    type: 3}
+  pulcino: {fileID: 5257918345529510566, guid: ed21d6c1a6d0d9148b1d110b36d53e75, type: 3}
