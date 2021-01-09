@@ -6,20 +6,20 @@ public class TankBehavior : MonoBehaviour
 {
 
     public GameObject bullet;
-    private float speed = 160f;
+    private float speed = 140f;
     public Transform shootPosition;
     private AudioSource audioData;
     private float nextShoot;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         audioData = GetComponent<AudioSource>();
         nextShoot = RandomGaussian(1.8f, 6.5f);
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         nextShoot -= Time.deltaTime;
         if (nextShoot < 0)
@@ -29,10 +29,6 @@ public class TankBehavior : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
-
-    }
 
     private void shoot()
     {

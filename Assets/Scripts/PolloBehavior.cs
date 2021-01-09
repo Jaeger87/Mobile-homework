@@ -7,22 +7,25 @@ public class PolloBehavior : MonoBehaviour
     private float mass;
     public GameObject polletto;
     public GameObject pulcino;
-    private float timeofbirth;
 
+    private AudioSource audioData;
     private float timeToLive = 4.0f;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
+        audioData = GetComponent<AudioSource>();
         mass = this.GetComponent<Rigidbody>().mass;
+
+        if (audioData != null && mass > 8)
+            audioData.Play(0);
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         timeToLive -= Time.deltaTime;
         
-
         if(timeToLive < 0)
             Destroy(this.gameObject);
 
@@ -68,7 +71,7 @@ public class PolloBehavior : MonoBehaviour
                                oldPosition,
                                transform.rotation);
         Vector3 polletto1Velocity = new Vector3(oldVelocity.normalized.x, oldVelocity.normalized.y, oldVelocity.normalized.z);
-        polletto1Velocity.Scale(new Vector3(Random.value < .5 ? 1 : -1, Random.value < .5 ? 1 : -1, -1));
+        polletto1Velocity.Scale(new Vector3(Random.value < .5 ? 1 : -1, Random.value < .5 ? 1 : -1, Random.value < .5 ? 1 : -1));
         polletto1.GetComponent<Rigidbody>().AddForce(polletto1Velocity * Random.Range(25, 48), ForceMode.Impulse);
     }
 
